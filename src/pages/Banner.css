@@ -1,0 +1,22 @@
+.page-wrapper {
+  background: #fff;
+}
+
+.page {
+  height: 100vh;
+}
+
+.banner-wrapper {
+  background-size: cover;
+  background-position: center;
+}
+
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.8;
+  background: rgba(0, 0, 0, 0.5);
+}

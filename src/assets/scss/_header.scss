@@ -1,0 +1,46 @@
+.header {
+  position: fixed;
+  width: 100%;
+  border: 1px solid pink;
+
+  nav {
+    position: relative;
+    background-color: $negativeColor;
+    padding-top: 0 0.5rem;
+  }
+
+  & img {
+    height: 40px;
+  }
+
+  &__toggle {
+    cursor: pointer;
+
+    span {
+      display: block;
+      width: 30px;
+      height: 3px;
+      background-color: $primaryColor;
+
+      &:not(:last-child) {
+        margin-bottom: 6px;
+      }
+    }
+  }
+
+  &__links {
+    a {
+      color: $primaryColor;
+      font-size: $font-sm;
+      font-weight: 400;
+
+      &:not(:last-child) {
+        padding-right: 1rem;
+      }
+
+      &:hover {
+        color: #0677a1;
+      }
+    }
+  }
+}

@@ -1,42 +1,30 @@
 import React, { Component } from 'react';
-import { Menu, Row, Col } from 'antd';
-import logo from '../assets/img/logo.png';
-import './Header.css';
+import logo from '../assets/img/header-logo.svg';
 
 export default class Header extends Component {
-  state = {
-    menuVisible: false,
-  };
-
   render() {
-    const { isMoblie } = this.props;
-    // const { menuVisible } = this.state;
-    const menuMode = isMoblie ? 'inline' : 'horizontal';
-
     const menu = (
-      <Menu mode={menuMode} defaultSelectedKeys={['home']} id="nav" key="nav">
-        <Menu.Item key="home">Home</Menu.Item>
-        <Menu.Item key="message">Message</Menu.Item>
-        <Menu.Item key="prayers">Prayers</Menu.Item>
-        <Menu.Item key="events">Events</Menu.Item>
-        <Menu.Item key="videos">Videos</Menu.Item>
-        <Menu.Item key="about">About Us</Menu.Item>
-      </Menu>
+      <>
+        <a href="/#">Home</a>
+        <a href="/#">Message</a>
+        <a href="/#">Requests</a>
+        <a href="/#">Gallery</a>
+        <a href="/#">About Us</a>
+      </>
     );
-
     return (
-      <header>
-        <Row justify="start" align="middle">
-          <Col lg={8} md={11} sm={24} xs={24} className="logo">
-            <a id="logo" href="/#">
-              <img alt="logo" src={logo} />
-              <span>Jesus Lives AG</span>
-            </a>
-          </Col>
-          <Col lg={16} md={13} sm={0} xs={0} className="menu">
-            {menuMode === 'horizontal' && menu}
-          </Col>
-        </Row>
+      <header className="header">
+        <nav className="flex flex-jc-sb flex-ai-c">
+          <a className="header__logo" href="/#">
+            <img src={logo} alt="Jesus Lives AG Church" />
+          </a>
+          <div className="header__links">{menu}</div>
+          <div className="header__toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </nav>
       </header>
     );
   }

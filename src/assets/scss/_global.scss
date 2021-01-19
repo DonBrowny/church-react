@@ -22,6 +22,11 @@ a:hover {
   text-decoration: none;
 }
 
+button {
+  padding: 0;
+  border: none;
+}
+
 // Flex
 .flex {
   display: flex;
@@ -36,5 +41,22 @@ a:hover {
 
   &-ai-c {
     align-items: center;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hide-for-mobile {
+  @include breakpoint-down(small) {
+    display: none;
+  }
+}
+
+.hide-for-desktop {
+  @include breakpoint-up(medium) {
+    display: none;
   }
 }

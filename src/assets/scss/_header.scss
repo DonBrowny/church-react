@@ -1,12 +1,22 @@
 .header {
   position: fixed;
-  width: 100%;
-  border: 1px solid pink;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  .overlay {
+    top: 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: linear-gradient($primaryColor, transparent);
+  }
 
   nav {
     position: relative;
     background-color: $negativeColor;
-    padding-top: 0 0.5rem;
+    padding: 0.5rem 0.75rem;
   }
 
   & img {
@@ -30,16 +40,34 @@
 
   &__links {
     a {
+      position: relative;
       color: $primaryColor;
       font-size: $font-sm;
       font-weight: 400;
+      transition: color 300ms ease-in-out;
 
+      &::before {
+        content: '';
+        left: 0;
+        right: 0;
+        bottom: -22px;
+        height: 3px;
+        background-color: $activeColor;
+        display: block;
+        position: absolute;
+        opacity: 0;
+        transition: opacity 300ms ease-in-out;
+      }
       &:not(:last-child) {
-        padding-right: 1rem;
+        margin-right: 1rem;
       }
 
       &:hover {
-        color: #0677a1;
+        color: $activeColor;
+
+        &::before {
+          opacity: 1;
+        }
       }
     }
   }

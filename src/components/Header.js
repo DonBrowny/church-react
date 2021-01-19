@@ -14,16 +14,17 @@ export default class Header extends Component {
     );
     return (
       <header className="header">
-        <nav className="flex flex-jc-sb flex-ai-c">
+        <div className="overlay"></div>
+        <nav className="container flex flex-jc-sb flex-ai-c">
           <a className="header__logo" href="/#">
             <img src={logo} alt="Jesus Lives AG Church" />
           </a>
-          <div className="header__links">{menu}</div>
-          <div className="header__toggle">
+          <div className="header__links hide-for-mobile ">{menu}</div>
+          <button className="header__toggle hide-for-desktop ">
             <span></span>
             <span></span>
             <span></span>
-          </div>
+          </button>
         </nav>
       </header>
     );

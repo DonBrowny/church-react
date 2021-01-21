@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import Header from '../components/Header';
+import Banner from './Banner';
 
 export default class Shell extends Component {
   render() {
     return (
       <>
         <Header />
+        <Banner />
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce congue
           congue libero in fermentum. Vestibulum accumsan nunc lacus, vitae

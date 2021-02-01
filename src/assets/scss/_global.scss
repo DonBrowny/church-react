@@ -1,0 +1,116 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Public Sans', sans-serif;
+  color: $primaryColor;
+}
+
+a,
+a:visited,
+a:hover {
+  text-decoration: none;
+}
+
+button {
+  padding: 0;
+  border: none;
+  background: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+// Flex
+.flex {
+  display: flex;
+
+  &-jc-sb {
+    justify-content: space-between;
+  }
+
+  &-jc-c {
+    justify-content: center;
+  }
+
+  &-ai-c {
+    align-items: center;
+  }
+}
+
+// Global Padding
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+// Toggle View
+
+.hide-for-mobile {
+  @include breakpoint-down(small) {
+    display: none;
+  }
+}
+
+.hide-for-desktop {
+  @include breakpoint-up(medium) {
+    display: none;
+  }
+}
+
+// Navigation Links
+
+.nav-links {
+  a {
+    position: relative;
+    color: $primaryColor;
+    font-size: $font-sm;
+    font-weight: 400;
+    transition: color 300ms ease-in-out;
+
+    &::before {
+      content: '';
+      left: 0;
+      right: 0;
+      bottom: -24px;
+      height: 4px;
+      background-color: $activeColor;
+      display: block;
+      position: absolute;
+      opacity: 0;
+      transition: opacity 300ms ease-in-out;
+    }
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+
+    &:hover {
+      color: $activeColor;
+
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+// Tamil font
+.font-tamil {
+  font-family: 'Mukta Malar', sans-serif;
+}

@@ -1,0 +1,23 @@
+@import '../assets/scss/variables';
+
+.banner {
+  min-height: 100vh;
+  background: url(../assets/img/banner-background.jpg) top center no-repeat;
+  background-size: cover;
+
+  &__text {
+    position: absolute;
+    top: 80px;
+    margin: 0 12px;
+    font-size: $font-lg;
+
+    &--left {
+      text-align: right;
+      flex: 1;
+    }
+    &--right {
+      text-align: left;
+      flex: 1;
+    }
+  }
+}

@@ -50,17 +50,31 @@
 // }
 
 import React from 'react';
+import { Fade } from 'react-awesome-reveal';
 import './Banner.scss';
 
 const Banner = () => {
   return (
     <section key="home" className="banner">
       <div className="banner__text">
-        <p className="banner__verse">
-          Come to me, all you who are weary and burdened, and I will give you
-          rest
-        </p>
-        <h3 className="banner__quote">Matthew 11:28</h3>
+        <div className="banner__text--left font-tamil">
+          <Fade direction="left" cascade="true">
+            <p className="banner__verse">
+              வருத்தப்பட்டுப் பாரஞ்சுமக்கிறவர்களே! நீங்கள் எல்லாரும்
+              என்னிடத்தில் வாருங்கள்; நான் உங்களுக்கு இளைப்பாறுதல் தருவேன்
+            </p>
+            <h3 className="banner__quote">மத்தேயு 11:28</h3>
+          </Fade>
+        </div>
+        <div className="banner__text--right hide-for-mobile">
+          <Fade direction="right" cascade="true">
+            <p className="banner__verse">
+              Come to me, all you who are weary and burdened, and I will give
+              you rest
+            </p>
+            <h3 className="banner__quote">Matthew 11:28</h3>
+          </Fade>
+        </div>
       </div>
     </section>
   );
